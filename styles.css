@@ -1,25 +1,145 @@
-/*Dark Theme Adjustments*/
-body.bg-dark {
-    background-color: #121212 !important;
+/* ---------- General ---------- */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-body.bg-dark .card,
-body.bg-dark .feature-box,
-body.bg-dark .faq-item,
-body.bg-dark .bg-light,
-body.bg-dark .bg-white {
+main {
+    flex: 1;
+}
+
+.hero-section {
+    min-height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80") center / cover;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.destination-card,
+.tour-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.destination-card:hover,
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ---------- FAQ ---------- */
+.faq-title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-title:hover {
+    background-color: #e9ecef !important;
+}
+
+.faq-text {
+    display: none;
+}
+
+/* ---------- Favorites ---------- */
+.favorites-box {
+    position: sticky;
+    top: 80px;
+}
+
+/* ---------- Photo viewer ---------- */
+.gallery-img {
+    cursor: zoom-in;
+}
+
+.gallery-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+}
+
+.gallery-content {
+    position: relative;
+    max-width: 900px;
+    margin: 5vh auto 0;
+}
+
+.gallery-content img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.gallery-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* ---------- Back to top button ---------- */
+#to-top {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1500;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+/* ---------- Dark theme (class is added by theme.js) ---------- */
+body.dark-theme {
+    background-color: #121212;
+    color: #f8f9fa;
+}
+
+body.dark-theme .card,
+body.dark-theme .feature-box,
+body.dark-theme .faq-item,
+body.dark-theme .bg-light,
+body.dark-theme .bg-white,
+body.dark-theme .list-group-item {
     background-color: #212529 !important;
     color: #f8f9fa !important;
     border-color: #343a40 !important;
 }
 
-body.bg-dark .text-muted {
+body.dark-theme .faq-title:hover {
+    background-color: #343a40 !important;
+}
+
+body.dark-theme .text-muted,
+body.dark-theme .form-text {
     color: #adb5bd !important;
 }
 
-body.bg-dark .form-control,
-body.bg-dark .form-select {
+body.dark-theme .btn-outline-dark {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+body.dark-theme .form-control,
+body.dark-theme .form-select {
     background-color: #2b3035;
     color: #fff;
     border-color: #495057;
+}
+
+body.dark-theme .form-control::placeholder {
+    color: #8c959f;
 }
