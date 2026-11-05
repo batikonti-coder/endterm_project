@@ -1,14 +1,9 @@
-// Booking form validation (contact.html)
-
-// Simple email check: something@something.something
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MIN_NAME_LENGTH = 3;
 const MIN_MESSAGE_LENGTH = 10;
 const MIN_PEOPLE = 1;
 const MAX_PEOPLE = 10;
 
-// Every function below checks one field.
-// It returns an error text, or an empty string "" if the value is correct.
 function checkName(value) {
     if (value.trim() === "") return "Please enter your name.";
     if (value.trim().length < MIN_NAME_LENGTH) return "Name must be at least " + MIN_NAME_LENGTH + " characters.";
@@ -41,7 +36,6 @@ function checkMessage(value) {
     return "";
 }
 
-// Which check function is used for which field (field id -> function)
 const formRules = [
     { id: "user-name", check: checkName },
     { id: "user-email", check: checkEmail },
@@ -50,8 +44,6 @@ const formRules = [
     { id: "messageInput", check: checkMessage }
 ];
 
-// Shows or hides the error message under one field.
-// Returns true if the field is valid.
 function showFieldResult(input, errorText) {
     const errorBox = document.getElementById(input.id + "-error");
     errorBox.textContent = errorText;
@@ -73,33 +65,29 @@ function validateField(rule) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
-    if (!form) return; // this code is only for contact.html
+    if (!form) return; 
 
     const successBox = document.getElementById("success-box");
     const message = document.getElementById("messageInput");
     const charCount = document.getElementById("char-count");
 
-    // Check a field again while the user is fixing it
     formRules.forEach(function (rule) {
         const input = document.getElementById(rule.id);
         const eventName = input.tagName === "SELECT" ? "change" : "input";
 
         input.addEventListener(eventName, function () {
             successBox.style.display = "none";
-            // Only re-check after the field was marked (so we don't show errors too early)
             if (input.classList.contains("is-invalid") || input.classList.contains("is-valid")) {
                 validateField(rule);
             }
         });
     });
-
-    // Live character counter for the message
     message.addEventListener("input", function () {
         charCount.textContent = message.value.length;
     });
 
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // stop the page from reloading
+        event.preventDefault(); 
         successBox.style.display = "none";
 
         let allValid = true;
@@ -110,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!allValid) {
-            // Move the cursor to the first wrong field
             form.querySelector(".is-invalid").focus();
             return;
         }
