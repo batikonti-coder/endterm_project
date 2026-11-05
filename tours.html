@@ -30,7 +30,6 @@
         <h2 class="text-center mb-4 fw-bold">Our Tour Packages</h2>
         <p class="text-center text-muted mb-5">Compare our packages and choose the best adventure for you.</p>
 
-        <!-- Search and filter -->
         <div class="row g-3 mb-3">
             <div class="col-md-8">
                 <label for="search-tour" class="form-label">Search by name</label>
@@ -40,20 +39,17 @@
                 <label for="type-filter" class="form-label">Tour type</label>
                 <select id="type-filter" class="form-select">
                     <option value="All">All types</option>
-                    <!-- other options are added from the array in tours.js -->
                 </select>
             </div>
         </div>
         <p id="result-count" class="text-muted small mb-4"></p>
 
         <div class="row g-4">
-            <!-- Tour cards are created by JavaScript from the "tours" array -->
             <div class="col-lg-8">
                 <div class="row" id="tours-container"></div>
                 <p id="no-results" class="alert alert-warning d-none">No tours found. Try another search.</p>
             </div>
 
-            <!-- Favorites list -->
             <aside class="col-lg-4">
                 <div class="p-3 bg-white border rounded shadow-sm favorites-box">
                     <h5 class="fw-bold">❤️ My Favorites <span id="fav-count" class="badge bg-danger">0</span></h5>
