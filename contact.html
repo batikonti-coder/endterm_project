@@ -11,17 +11,17 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">✈️ Batyrkhan Travels</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Open menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                    <button id="theme-btn" class="btn btn-sm btn-secondary ms-2">Toggle Theme</button>
+                    <li class="nav-item"><button id="theme-btn" type="button" class="btn btn-sm btn-secondary ms-lg-2 mt-2 mt-lg-0">🌙 Dark mode</button></li>
                 </ul>
             </div>
         </div>
@@ -42,44 +42,63 @@
             </div>
 
             <div class="col-md-7">
-                <form id="contact-form" class="p-4 bg-white border rounded shadow-sm">
-                    <h4 class="fw-bold mb-4">Send a Message</h4>
+                <!-- novalidate: we turn off browser messages and check the form with our own JavaScript (form.js) -->
+                <form id="contact-form" class="p-4 bg-white border rounded shadow-sm" novalidate>
+                    <h4 class="fw-bold mb-4">Book a Tour</h4>
 
                     <div class="mb-3">
-                        <label for="user-name" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="user-name" placeholder="John Doe" required>
+                        <label for="user-name" class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" id="user-name" placeholder="John Doe">
+                        <div class="invalid-feedback" id="user-name-error"></div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="user-email" class="form-label">Email address</label>
-                        <input type="text" class="form-control" id="user-email" placeholder="name@example.com" required>
+                        <label for="user-email" class="form-label">Email address *</label>
+                        <input type="text" class="form-control" id="user-email" placeholder="name@example.com">
+                        <div class="invalid-feedback" id="user-email-error"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8 mb-3">
+                            <label for="tourSelect" class="form-label">Interested Tour *</label>
+                            <select class="form-select" id="tourSelect">
+                                <option value="" selected>Choose a package...</option>
+                                <option value="Basic Getaway">Basic Getaway</option>
+                                <option value="Comfort Journey">Comfort Journey</option>
+                                <option value="VIP Explorer">VIP Explorer</option>
+                            </select>
+                            <div class="invalid-feedback" id="tourSelect-error"></div>
+                        </div>
+                        <div class="col-sm-4 mb-3">
+                            <label for="people" class="form-label">Travelers *</label>
+                            <input type="number" class="form-control" id="people" placeholder="1-10">
+                            <div class="invalid-feedback" id="people-error"></div>
+                        </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="tourSelect" class="form-label">Interested Tour</label>
-                        <select class="form-select" id="tourSelect">
-                            <option selected>Choose a package...</option>
-                            <option value="1">Basic Getaway</option>
-                            <option value="2">Comfort Journey</option>
-                            <option value="3">VIP Explorer</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="messageInput" class="form-label">Message</label>
+                        <label for="messageInput" class="form-label">Message *</label>
                         <textarea class="form-control" id="messageInput" rows="4" placeholder="How can we help you?"></textarea>
+                        <div class="form-text"><span id="char-count">0</span> characters (minimum 10)</div>
+                        <div class="invalid-feedback" id="messageInput-error"></div>
                     </div>
-                    <div id="error-box" class="alert alert-danger" style="display: none;"></div>
+
                     <div id="success-box" class="alert alert-success" style="display: none;"></div>
 
-                    <button type="submit" class="btn btn-primary w-100 fw-bold">Send Message</button>
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">Send Request</button>
                 </form>
             </div>
         </div>
     </main>
 
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2026 Batyrkhan Travels. All rights reserved.</p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/jquery-features.js"></script>
 </body>
 </html>
