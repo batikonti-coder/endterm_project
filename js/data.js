@@ -1,4 +1,3 @@
-// Project data. Tour cards on tours.html are created from this array.
 const tours = [
     { id: 1, name: "Almaty Mountains", type: "Nature", price: 150, days: 3,
       img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80" },
@@ -14,5 +13,4 @@ const tours = [
       img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80" }
 ];
 
-// Second array: tour types for the filter <select>
 const tourTypes = ["Nature", "Beach", "City"];
