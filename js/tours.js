@@ -1,29 +1,19 @@
-// Tours page: cards from the array, search, filter by type and favorites list.
-// Uses "tours" and "tourTypes" arrays from data.js
-
-// Array with ids of favorite tours. Saved in localStorage so it is not lost after reload.
 let favoriteIds = JSON.parse(localStorage.getItem("favoriteIds")) || [];
 
-// ---------- Helper functions ----------
-
-// Returns price as text, for example 150 -> "$150"
 function formatPrice(price) {
     return "$" + price;
 }
 
-// Finds one tour in the array by its id (returns the tour object or undefined)
 function findTourById(id) {
     return tours.find(function (tour) {
         return tour.id === id;
     });
 }
 
-// Returns true if the tour is already in favorites
 function isFavorite(id) {
     return favoriteIds.includes(id);
 }
 
-// Returns a new array only with tours that match the search text and the type
 function getFilteredTours(searchText, type) {
     const result = [];
     const text = searchText.trim().toLowerCase();
@@ -39,9 +29,6 @@ function getFilteredTours(searchText, type) {
     return result;
 }
 
-// ---------- Rendering ----------
-
-// Creates one card element for a tour
 function createTourCard(tour) {
     const col = document.createElement("div");
     col.className = "col-md-6 mb-4";
@@ -63,8 +50,6 @@ function createTourCard(tour) {
     `;
     return col;
 }
-
-// Shows tour cards that match current search and filter
 function renderTours() {
     const container = document.getElementById("tours-container");
     const searchText = document.getElementById("search-tour").value;
@@ -81,7 +66,6 @@ function renderTours() {
 
     resultCount.textContent = "Showing " + filtered.length + " of " + tours.length + " tours";
 
-    // Show the warning only when nothing was found
     if (filtered.length === 0) {
         noResults.classList.remove("d-none");
     } else {
@@ -89,7 +73,6 @@ function renderTours() {
     }
 }
 
-// Adds <option> for every type from the tourTypes array
 function fillTypeFilter() {
     const select = document.getElementById("type-filter");
 
@@ -101,7 +84,6 @@ function fillTypeFilter() {
     });
 }
 
-// Shows the favorites list on the right side
 function renderFavorites() {
     const list = document.getElementById("favorites-list");
     const empty = document.getElementById("fav-empty");
@@ -140,13 +122,10 @@ function renderFavorites() {
     total.textContent = favoriteIds.length > 0 ? "Total: " + formatPrice(totalPrice) : "";
 }
 
-// ---------- Favorites logic ----------
-
 function saveFavorites() {
     localStorage.setItem("favoriteIds", JSON.stringify(favoriteIds));
 }
 
-// Adds the tour to favorites, or removes it if it is already there
 function toggleFavorite(id) {
     if (isFavorite(id)) {
         removeFavorite(id);
@@ -159,7 +138,6 @@ function toggleFavorite(id) {
 }
 
 function removeFavorite(id) {
-    // filter() makes a new array without this id
     favoriteIds = favoriteIds.filter(function (favId) {
         return favId !== id;
     });
@@ -168,24 +146,19 @@ function removeFavorite(id) {
     renderFavorites();
 }
 
-// ---------- Events ----------
 
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("tours-container");
-    if (!container) return; // this code is only for tours.html
+    if (!container) return; 
 
     fillTypeFilter();
     renderTours();
     renderFavorites();
 
-    // "input" fires on every key press in the search box
     document.getElementById("search-tour").addEventListener("input", renderTours);
 
-    // "change" fires when the user selects another option
     document.getElementById("type-filter").addEventListener("change", renderTours);
 
-    // Cards are re-created many times, so we listen for clicks on the parent container
-    // and check which button was clicked (event delegation).
     container.addEventListener("click", function (event) {
         const btn = event.target.closest(".fav-btn");
         if (btn) {
