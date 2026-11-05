@@ -1,0 +1,25 @@
+/*Dark Theme Adjustments*/
+body.bg-dark {
+    background-color: #121212 !important;
+}
+
+body.bg-dark .card,
+body.bg-dark .feature-box,
+body.bg-dark .faq-item,
+body.bg-dark .bg-light,
+body.bg-dark .bg-white {
+    background-color: #212529 !important;
+    color: #f8f9fa !important;
+    border-color: #343a40 !important;
+}
+
+body.bg-dark .text-muted {
+    color: #adb5bd !important;
+}
+
+body.bg-dark .form-control,
+body.bg-dark .form-select {
+    background-color: #2b3035;
+    color: #fff;
+    border-color: #495057;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batyrkhan Travels | Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">✈️ Batyrkhan Travels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <button id="theme-btn" class="btn btn-sm btn-secondary ms-2">Toggle Theme</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container py-5">
+        <h2 class="text-center mb-5 fw-bold">Contact Us</h2>
+        
+        <div class="row g-5">
+            <div class="col-md-5">
+                <div class="p-4 bg-light rounded shadow-sm h-100">
+                    <h4 class="fw-bold mb-4">Get In Touch</h4>
+                    <p><strong>📍 Address:</strong> EXPO, Astana, Kazakhstan</p>
+                    <p><strong>📞 Phone:</strong> +7 (777) 777 77 77</p>
+                    <p><strong>✉️ Email:</strong> info@batyrkhantravels.kz</p>
+                    <hr>
+                    <p class="text-muted mt-4">Our support team is available 24/7 to answer your questions and help you plan your perfect trip.</p>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <form id="contact-form" class="p-4 bg-white border rounded shadow-sm">
+                    <h4 class="fw-bold mb-4">Send a Message</h4>
+
+                    <div class="mb-3">
+                        <label for="user-name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="user-name" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="user-email" class="form-label">Email address</label>
+                        <input type="text" class="form-control" id="user-email" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tourSelect" class="form-label">Interested Tour</label>
+                        <select class="form-select" id="tourSelect">
+                            <option selected>Choose a package...</option>
+                            <option value="1">Basic Getaway</option>
+                            <option value="2">Comfort Journey</option>
+                            <option value="3">VIP Explorer</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="messageInput" class="form-label">Message</label>
+                        <textarea class="form-control" id="messageInput" rows="4" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <div id="error-box" class="alert alert-danger" style="display: none;"></div>
+                    <div id="success-box" class="alert alert-success" style="display: none;"></div>
+
+                    <button type="submit" class="btn btn-primary w-100 fw-bold">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
