@@ -11,17 +11,17 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">✈️ Batyrkhan Travels</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Open menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <button id="theme-btn" class="btn btn-sm btn-secondary ms-2">Toggle Theme</button>
+                    <li class="nav-item"><button id="theme-btn" type="button" class="btn btn-sm btn-secondary ms-lg-2 mt-2 mt-lg-0">🌙 Dark mode</button></li>
                 </ul>
             </div>
         </div>
@@ -30,17 +30,45 @@
     <main class="container py-5">
         <h2 class="text-center mb-4 fw-bold">About Us</h2>
         <p class="text-center text-muted mb-5">Learn more about Batyrkhan Travels and read our frequently asked questions.</p>
-        
+
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <div class="p-4 bg-white border rounded shadow-sm">
                     <h4 class="fw-bold mb-3">Our Mission</h4>
                     <p>Welcome to Batyrkhan Travels. We are dedicated to providing you with the best travel experiences, from relaxing beach holidays to thrilling mountain adventures.</p>
+
                     <h4 class="fw-bold mt-5 mb-3">Frequently Asked Questions</h4>
+                    <p class="text-muted small">Click on a question to see the answer.</p>
                     <div class="faq-box mt-4">
                         <div class="faq-item border mb-2">
-                            <h5 class="faq-title p-2 bg-light m-0" style="cursor: pointer;">Refunds?</h5>
-                            <div class="faq-text p-2" style="display: none;">Full refund 7 days before trip.</div>
+                            <h5 class="faq-title p-2 bg-light m-0">Refunds? <span class="faq-icon">+</span></h5>
+                            <div class="faq-text p-2">Full refund 7 days before trip.</div>
                         </div>
                         <div class="faq-item border mb-2">
-                            <h5 class
+                            <h5 class="faq-title p-2 bg-light m-0">Is the flight included? <span class="faq-icon">+</span></h5>
+                            <div class="faq-text p-2">Comfort Journey and VIP Explorer packages include flights. Basic Getaway does not.</div>
+                        </div>
+                        <div class="faq-item border mb-2">
+                            <h5 class="faq-title p-2 bg-light m-0">Can I travel with children? <span class="faq-icon">+</span></h5>
+                            <div class="faq-text p-2">Yes! Children under 5 travel for free, children 5–12 get a 50% discount.</div>
+                        </div>
+                        <div class="faq-item border mb-2">
+                            <h5 class="faq-title p-2 bg-light m-0">How do I book a tour? <span class="faq-icon">+</span></h5>
+                            <div class="faq-text p-2">Choose a tour on the Tours page and send us the form on the Contact page.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2026 Batyrkhan Travels. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/jquery-features.js"></script>
+</body>
+</html>

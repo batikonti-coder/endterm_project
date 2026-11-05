@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">✈️ Batyrkhan Travels</a>
-        
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Open menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
                     <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <button id="theme-btn" class="btn btn-sm btn-secondary ms-2">Toggle Theme</button>
+                    <li class="nav-item"><button id="theme-btn" type="button" class="btn btn-sm btn-secondary ms-lg-2 mt-2 mt-lg-0">🌙 Dark mode</button></li>
                 </ul>
             </div>
         </div>
@@ -36,10 +34,53 @@
             <a href="tours.html" class="btn btn-primary btn-lg px-5 py-3">Explore Tours</a>
         </div>
     </main>
+
     <section class="container py-5">
         <h2 class="text-center mb-5 fw-bold">Popular Destinations</h2>
-        
+
         <div class="row g-4">
             <div class="col-12 col-md-4">
                 <div class="card h-100 shadow-sm destination-card">
-                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Paris">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Paris, France</h5>
+                        <p class="card-text">The city of love, art and the famous Eiffel Tower.</p>
+                        <a href="destinations.html" class="btn btn-outline-dark w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm destination-card">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="London">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">London, UK</h5>
+                        <p class="card-text">Historic streets, Big Ben and the London Eye.</p>
+                        <a href="destinations.html" class="btn btn-outline-dark w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow-sm destination-card">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Bali">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Bali, Indonesia</h5>
+                        <p class="card-text">Tropical paradise with temples and beautiful beaches.</p>
+                        <a href="destinations.html" class="btn btn-outline-dark w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2026 Batyrkhan Travels. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/jquery-features.js"></script>
+</body>
+</html>
